@@ -5,6 +5,7 @@ import { Routes, RouterModule } from '@angular/router';
 import { AppComponent } from './app.component';
 import { NavbarComponent } from './navbar/navbar.component';
 import { BodyMassIndexCalcComponent } from './body-mass-index-calc/body-mass-index-calc.component';
+import { CaloriesCalcComponent } from './calories-calc/calories-calc.component';
 
 const appRoutes : Routes = [
   { path: '', redirectTo: '/bmi', pathMatch: 'full' },
@@ -15,7 +16,8 @@ const appRoutes : Routes = [
   declarations: [
     AppComponent,
     NavbarComponent,
-    BodyMassIndexCalcComponent
+    BodyMassIndexCalcComponent,
+    CaloriesCalcComponent
   ],
   imports: [
     BrowserModule,
