@@ -13,7 +13,8 @@ const appRoutes : Routes = [
 @NgModule({
   declarations: [
     AppComponent,
-    NavbarComponent
+    NavbarComponent,
+    BodyMassIndexCalcComponent
   ],
   imports: [
     BrowserModule,
