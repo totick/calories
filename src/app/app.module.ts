@@ -7,7 +7,7 @@ import { NavbarComponent } from './navbar/navbar.component';
 import { BodyMassIndexCalcComponent } from './body-mass-index-calc/body-mass-index-calc.component';
 
 const appRoutes : Routes = [
-  { path: '/', component: BodyMassIndexCalcComponent }
+  { path: '', component: BodyMassIndexCalcComponent }
 ]
 
 @NgModule({
