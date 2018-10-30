@@ -1,3 +1,46 @@
-<p>
-  body-mass-index-calc works!
-</p>
+<h1>BMI</h1>
+<hr>
+<h3>Räkna ut ditt BMI</h3>
+<form (ngSubmit)="onSubmit(f)" #f="ngForm">
+
+
+
+  <div *ngIf="!f.submitted">
+
+  <div class="form-group">
+    <label for="height"></label>
+    <input ngModel required class="form-control" type="number" name="height" placeholder="längd i cm">
+  </div>
+
+  <div class="form-group">
+    <label for="weight"></label>
+    <input ngModel required type="number" name="weight" placeholder="vikt i kg" class="form-control">
+  </div>
+
+  <button [disabled]="!f.valid" type="submit" class="btn btn-primary">Beräkna</button>
+</div>
+
+<div *ngIf="f.submitted">
+    <p>Ditt BMI är <span class="bmi-result">{{ bmiResult }}</span></p>
+    <div>
+      <p>
+        Så här tolkar du resultatet:
+      </p>
+      <p>Mer än 30: Du är kraftigt överviktig</p>
+      <p>25,1-30: Du är överviktig</p>
+      <p>19,1-25: Du är normalviktig</p>
+      <p>16,1-19: Du är något underviktig</p>
+      <p>16 eller mindre: Du är mycket underviktig</p>
+    </div>
+    <div>
+        Undantag: <br>
+        Om du är vältränad och muskulös stämmer inte BMI. 
+        Då kan du konsultera en dietist eller liknande för mätning av kroppsfettet. 
+        BMI kan även ge missvisande resultat om du är mycket lång. 
+        För barn, ungdomar och äldre personer gäller andra rekommendationer.
+    </div>
+</div>
+
+</form>
+<hr>
+
