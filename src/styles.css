@@ -1,1 +1,17 @@
 /* You can add global styles to this file, and also import other style files */
+
+body{
+    font-family: 'museo sans w01';
+}
+
+.above-avg{
+    color: red;
+}
+
+.avg{
+    color: green;
+}
+
+.below-avg{
+    color: blue;
+}
