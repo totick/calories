@@ -1,6 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
+import { FormsModule } from '@angular/forms';
 
 import { AppComponent } from './app.component';
 import { NavbarComponent } from './navbar/navbar.component';
@@ -9,7 +10,8 @@ import { CaloriesCalcComponent } from './calories-calc/calories-calc.component';
 
 const appRoutes : Routes = [
   { path: '', redirectTo: '/bmi', pathMatch: 'full' },
-  { path: 'bmi', component: BodyMassIndexCalcComponent }
+  { path: 'bmi', component: BodyMassIndexCalcComponent },
+  { path: 'calcalc', component: CaloriesCalcComponent }
 ]
 
 @NgModule({
@@ -21,6 +23,7 @@ const appRoutes : Routes = [
   ],
   imports: [
     BrowserModule,
+    FormsModule,
     RouterModule.forRoot(appRoutes)
   ],
   providers: [],
