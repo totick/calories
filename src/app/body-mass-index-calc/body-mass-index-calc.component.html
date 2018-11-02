@@ -1,6 +1,6 @@
 <h1>BMI</h1>
 <hr>
-<h3>Räkna ut ditt BMI</h3>
+<h1 style="text-align: center">Räkna ut ditt BMI</h1>
 <form (ngSubmit)="onSubmit(f)" #f="ngForm">
 
 
@@ -21,23 +21,29 @@
 </div>
 
 <div *ngIf="f.submitted">
-    <p>Ditt BMI är <span class="bmi-result">{{ bmiResult }}</span></p>
-    <div>
-      <p>
-        Så här tolkar du resultatet:
-      </p>
-      <p>Mer än 30: Du är kraftigt överviktig</p>
-      <p>25,1-30: Du är överviktig</p>
-      <p>19,1-25: Du är normalviktig</p>
-      <p>16,1-19: Du är något underviktig</p>
-      <p>16 eller mindre: Du är mycket underviktig</p>
-    </div>
-    <div>
-        Undantag: <br>
-        Om du är vältränad och muskulös stämmer inte BMI. 
-        Då kan du konsultera en dietist eller liknande för mätning av kroppsfettet. 
-        BMI kan även ge missvisande resultat om du är mycket lång. 
-        För barn, ungdomar och äldre personer gäller andra rekommendationer.
+    <div class="bmi-calc-container">
+      <div class="bmi-result-container">
+          <div>Ditt BMI är 
+            <span class="bmi-result" 
+            [ngClass]="{'above-avg':bmiResult >= 25.1, 'avg':bmiResult >= 19 && bmiResult < 25.1, 'below-avg': bmiResult < 19}">{{ bmiResult }}
+          </span>
+        </div>
+      </div>
+        
+        <div class="bmi-explanation-container">
+          <div class="bmi-underweight">
+            <div class="bmi-underweight-label">undervikt</div>
+            <div class="bmi-underweight-value">&lt;19</div>
+          </div>
+          <div class="bmi-normalweight">
+            <div class="bmi-normalweight-label">normalvikt</div>
+            <div class="bmi-normalweight-value">19,1 - 25</div>
+          </div>
+          <div class="bmi-overweight">
+            <div class="bmi-overweight-label">övervikt</div>
+            <div class="bmi-overweight-value">&gt;25.1</div>
+          </div>
+        </div>
     </div>
 </div>
 

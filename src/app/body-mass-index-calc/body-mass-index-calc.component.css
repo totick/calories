@@ -1,3 +1,36 @@
+.bmi-result-container{
+    text-align: center;
+    font-size: 2.5rem;
+}
+
 .bmi-result{
-    font-size: 2.35rem;
+    font-size: 3.5rem;
+}
+
+.bmi-explanation-container{
+    font-size: 1rem;
+    text-align: center;
+}
+
+.bmi-underweight{
+    text-align: center;
+    display: inline-block;
+    text-transform: uppercase;
+    width: 30%;
+    border-right: solid 2px #eee;
+}
+
+.bmi-normalweight{
+    text-align: center;
+    display: inline-block;
+    text-transform: uppercase;
+    width:30%;
+}
+
+.bmi-overweight{
+    text-align: center;
+    display: inline-block;
+    text-transform: uppercase;
+    width: 30%;
+    border-left: solid 2px #eee;
 }
