@@ -1,3 +1,41 @@
-<p>
-  calories-calc works!
-</p>
+<h1>Kaloribehov</h1>
+<hr>
+<h2>Räkna ut ditt kaloribehov</h2>
+    <form (ngSubmit)="onSubmit(f)" #f="ngForm">
+        <div *ngIf="!f.submitted">
+        <div class="form-group">
+            <label for="age"></label>
+            <input required ngModel placeholder="Ålder" type="number" name="age" class="form-control">
+        </div>
+        <div class="form-group">
+            <label for="weight"></label>
+            <input required ngModel placeholder="Vikt i kg" type="number" name="weight" class="form-control">
+        </div>
+        <div class="form-group">
+          <label for="height"></label>
+          <input required ngModel placeholder="Längd i cm" type="number" name="height" class="form-control">
+        </div>
+        <div class="radio">
+          <label>
+          <input required [ngModel]="defaultGender" value="male" type="radio" name="gender">
+            Man
+          </label>
+        </div>
+        <div class="radio">
+          <label>
+            <input required [ngModel]="defaultGender" value="female" type="radio" name="gender">
+            Kvinna
+          </label>
+        </div>
+        <div class="form-group">
+          <label for="trainingLevel"></label>
+          <select [ngModel]=defaultTrainingLevel name="trainingLevel" class="form-control">
+            <option [value]="tl.value" *ngFor="let tl of trainingLevels">{{tl.text}}</option>
+          </select>
+        </div>
+        <button [disabled]="!f.valid" type="submit" class="btn btn-primary">Beräkna</button>
+</div>
+<div *ngIf="f.submitted">
+  <div class="bmr-result-container">Ditt dagliga kaloribehov är <span class="bmr-result">{{ totalBMR }}</span> kilokalorier.</div>
+</div>
+</form>
